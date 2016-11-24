@@ -20,7 +20,7 @@ for giver in givers:
         r_index = random.randint(0, len(receivers) - 1)
         candidate = receivers[r_index]
         if (giver, candidate) and (candidate, giver) \
-                not in no_match:
+                not in no_match and giver != candidate:
             match = True
             matches.append((giver, candidate))
             receivers.pop(r_index)
