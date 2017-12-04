@@ -19,10 +19,11 @@ for giver in givers:
     while not match:
         r_index = random.randint(0, len(receivers) - 1)
         candidate = receivers[r_index]
-        if (giver, candidate) and (candidate, giver) \
-                not in no_match and giver != candidate:
+        if (giver, candidate) not in no_match and \
+           (candidate, giver) not in no_match and \
+           giver != candidate:
             match = True
             matches.append((giver, candidate))
             receivers.pop(r_index)
 
-print matches
+print(matches)
